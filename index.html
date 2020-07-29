@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+
+<script>
+
+    var elementos = [];
+    var numVigente = 0;
+
+    $(document).ready(function(){
+        elementos = [1,2,3,4,5,6,7,8,9];
+        var indiceActual = getRandomInt(0, elementos.length - 1);
+        console.log(elementos);
+        console.log(elementos[indiceActual])
+        
+        var imagen = document.getElementById("e"+elementos[indiceActual]);
+        numVigente = elementos[indiceActual];
+        imagen.style.display = "block";
+    });
+    
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function cambio(numero) {
+        
+        if (elementos.length > 0) {
+
+            if (numVigente == numero) {
+              
+                var index = elementos.indexOf( parseInt(numero));            
+                elementos.splice(index, 1);
+
+
+                var imagen = document.getElementById("e"+numero);
+                imagen.style.display = "none";
+               
+                var indiceActual = getRandomInt(0, elementos.length - 1);
+                var imagen = document.getElementById("e"+elementos[indiceActual]);
+                numVigente = elementos[indiceActual];
+                imagen.style.display = "block";
+
+                return true;
+
+            }
+            else{
+
+                alert("ERROR intentar de nuevo");
+                return false;
+            }
+        }
+        else{
+            
+            console.log("ACABADO")
+            return 0;
+        }
+    }
+
+
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+
+  if (keyName == "1") {
+      
+    if (cambio(keyName)) {
+        sUno.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      }
+      
+      
+  }
+
+  if (keyName == "2") {
+    if (cambio(keyName)) {
+        sDos.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      }
+  }
+
+  if (keyName == "3") {
+    if (cambio(keyName)) {
+        sTres.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      }
+  }
+
+
+  if (keyName == "4") {
+    if (cambio(keyName)) {
+        sCuatro.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      };
+  }
+
+  if (keyName == "5") {
+    if (cambio(keyName)) {
+        sCinco.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      }
+  }
+
+  if (keyName == "6") {
+    if (cambio(keyName)) {
+        sSeis.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      }
+  }
+
+  if (keyName == "7") {
+    if (cambio(keyName)) {
+        sSiete.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      }
+  }
+
+  if (keyName == "8") {
+    if (cambio(keyName)) {
+        sOcho.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      }
+  }
+
+  if (keyName == "9") {
+    if (cambio(keyName)) {
+        sNueve.play();  
+        sBien.play();
+            
+      }
+      else{
+          sMal.play();
+      }
+  }
+  
+});
+
+</script>
+
+     <style>
+        img {
+            width: 44px;
+            height: auto;
+            cursor: pointer;
+         }
+
+         #lstNum img :hover{
+            width: 66px;
+            height: auto;
+            cursor: pointer;
+         }
+
+
+         #pImg img {
+
+            width: 300px;
+            height: auto;
+            cursor: pointer;
+             
+         }
+
+
+
+     </style>
+
+    <!-- <ul id="lstNum">
+        <li> <img src="img/nUno.png" alt="" onclick="sUno.play()">  </li>
+        <li><img src="img/nDos.png" alt="" onclick="sDos.play()"></li>
+        <li><img src="img/nTres.png" alt="" onclick="sTres.play()"></li>
+        <li><img src="img/nCuatro.png" alt="" onclick="sCuatro.play()"></li>
+        <li><img src="img/nCinco.png" alt="" onclick="sCinco.play()"></li>
+        <li><img src="img/nSeis.png" alt="" onclick="sSeis.play()"></li>
+        <li><img src="img/nSiete.png" alt="" onclick="sSiete.play()"></li>
+        <li><img src="img/nOcho.png" alt="" onclick="sOcho.play()"></li>
+        <li><img src="img/nNueve.png" alt="" onclick="sNueve.play()"></li>
+        <li><img src="img/nDiez.png" alt="" onclick="sDiez.play()"></li>
+    
+        <img src="img/rocky.jpg" alt="" onclick="sRocky.play()">
+    
+    </ul> -->
+
+
+
+        <img src="img/nUno.png" alt="" onclick="sUno.play()">  
+        <img src="img/nDos.png" alt="" onclick="sDos.play()">
+        <img src="img/nTres.png" alt="" onclick="sTres.play()">
+        <img src="img/nCuatro.png" alt="" onclick="sCuatro.play()">
+        <img src="img/nCinco.png" alt="" onclick="sCinco.play()">
+        <img src="img/nSeis.png" alt="" onclick="sSeis.play()">
+        <img src="img/nSiete.png" alt="" onclick="sSiete.play()">
+        <img src="img/nOcho.png" alt="" onclick="sOcho.play()">
+        <img src="img/nNueve.png" alt="" onclick="sNueve.play()">
+        <img src="img/nDiez.png" alt="" onclick="sDiez.play()">    
+        <img src="img/rocky.jpg" alt="" onclick="sRocky.play()">
+
+
+<div>   
+
+    <hr>
+    <h2>¿Cuantas weas hay?</h2>
+
+    <div id="pImg">
+
+        <img src="img/e1.jpg" id="e1" style="display: none;" alt="">
+        <img src="img/e2.jpg" id="e2" style="display: none;" alt="">
+        <img src="img/e3.jpg" id="e3" style="display: none;" alt="">
+        <img src="img/e4.jpg" id="e4" style="display: none;" alt="">
+        <img src="img/e5.jpg" id="e5" style="display: none;" alt="">
+        <img src="img/e6.jpg" id="e6" style="display: none;" alt="">
+        <img src="img/e7.jpg" id="e7" style="display: none;" alt="">
+        <img src="img/e8.jpg" id="e8" style="display: none;" alt="">
+        <img src="img/e9.jpg" id="e9" style="display: none;" alt="">
+        
+        <!-- <img src="img/eUno.jpg" id="eUno" alt=""> -->
+
+
+    </div>
+
+
+</div>
+
+
+    <audio id="sUno">
+        <source src="sonido/uno.m4a" type="audio/mp4" />
+    </audio>
+
+    <audio id="sDos">
+        <source src="sonido/dos.m4a" type="audio/mp4" />
+    </audio>
+
+    <audio id="sTres">
+        <source src="sonido/tres.m4a" type="audio/mp4" />
+    </audio>
+    <audio id="sCuatro">
+        <source src="sonido/cuatro.m4a" type="audio/mp4" />
+    </audio>
+    <audio id="sCinco">
+        <source src="sonido/cinco.m4a" type="audio/mp4" />
+    </audio>
+    <audio id="sSeis">
+        <source src="sonido/seis.m4a" type="audio/mp4" />
+    </audio>
+    <audio id="sSiete">
+        <source src="sonido/siete.m4a" type="audio/mp4" />
+    </audio>
+    <audio id="sOcho">
+        <source src="sonido/ocho.m4a" type="audio/mp4" />
+    </audio>
+    <audio id="sNueve">
+        <source src="sonido/nueve.m4a" type="audio/mp4" />
+    </audio>
+    <audio id="sDiez">
+        <source src="sonido/diez.m4a" type="audio/mp4" />
+    </audio>
+
+    <audio id="sRocky">
+        <source src="sonido/sRocky.m4a" type="audio/mp4" />
+    </audio>
+
+    <audio id="sBien">
+        <source src="sonido/bien.m4a" type="audio/mp4" />
+    </audio>
+
+    <audio id="sMal">
+        <source src="sonido/mal.m4a" type="audio/mp4" />
+    </audio>
+
+
+
+</body>
+</html>
